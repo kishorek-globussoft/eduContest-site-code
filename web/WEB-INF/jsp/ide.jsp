@@ -86,7 +86,7 @@
                             </li>
                         </ul>
                         <h1 class="logo-wrapper">
-                            <a href="index.html" class="brand-logo center">
+                            <a href="index.htm" class="brand-logo center">
                                 <img src="../view/assets/images/logo.png" alt="Contest.EduMongoose">
                             </a> 
                             <span class="logo-text">Contest.EduMongoose</span>
