@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<rect x="1" y="23" width="46" height="2"/>
+	<rect x="23" y="3.734" width="2" height="40.532"/>
+	<path d="M46.218,45.053H1.781C0.799,45.053,0,44.255,0,43.273V4.729c0-0.982,0.799-1.781,1.781-1.781h44.437
+		C47.202,2.948,48,3.747,48,4.729v38.544C48,44.255,47.2,45.053,46.218,45.053z M2,43.053h44V4.948H2V43.053z"/>
+	<text transform="matrix(1 0 0 1 10.6641 18.4629)" font-family="'ArialMT'" font-size="12.502">-</text>
+	<text transform="matrix(0.7071 0.7071 -0.7071 0.7071 8.8535 34.4131)" font-family="'ArialMT'" font-size="10.9393">+</text>
+	<text transform="matrix(1 0 0 1 32.7637 17.6797)" font-family="'ArialMT'" font-size="10.9392">+</text>
+	<text transform="matrix(1 0 0 1 32.9961 37.2148)" font-family="'ArialMT'" font-size="10.1579">=</text>
+</g>
+</svg>

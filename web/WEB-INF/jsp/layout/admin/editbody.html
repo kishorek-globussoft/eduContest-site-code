@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>Contest.EduMongoose | Admin | problem</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="assets/images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="assets/images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+
+
+  <!-- CORE CSS-->    
+  <link href="../assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/admin/css/admin.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
+  <link href="../assets/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/plugins/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+<script type="text/javascript" src="../assets/plugins/ckeditor/ckeditor.js"></script>    
+
+</head>
+
+<body>
+  <!-- START HEADER -->
+   <header>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-align-justify"></i></a>
+            <span class="page-title">Edit Body</span>
+          </div>
+          
+        </div>
+      </nav>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo">
+          <a href="#" class="brand-logo">
+            <img src="../assets/images/logo.png">
+          </a>
+        </li>
+        <li class="active bold"><a href="index.html">Dashboard</a></li>
+        <li class="bold"><a href="create_problems.html">Problems</a></li>
+        <li class="bold"><a href="judges.html">Judges</a></li>
+      </ul>
+    </header>
+  <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- START MAIN -->
+  <main>
+      <div class="container">
+
+        <div class="row">
+          <div class="col offset-m1 m10">
+             <div class="card">
+              <div class="card-content">
+                <span class="card-title">Create problem</span>
+                 <form>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="Code" type="text" class="validate" placeholder="HTML5">
+                      <label for="Code">Code</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="Name" type="text" class="validate" placeholder="Dashboard">
+                      <label for="Name">Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <textarea class="ckeditor" cols="80" id="editor2" rows="10" tabindex="3">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+                      <!-- <textarea class="ckeditor" cols="80" id="editor2" rows="10" tabindex="3"></textarea> -->
+
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="card-action ">
+                <a href="editbody.html" class="btn">Submit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>     
+</main>
+  <!-- END MAIN -->
+
+
+<!-- ================================================
+Scripts
+================================================ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58515856-20', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- jQuery Library -->
+<script type="text/javascript" src="../assets/plugins/jquery.min.js"></script>    
+<!--materialize js-->
+<script type="text/javascript" src="../assets/plugins/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="../assets/admin/js/init.js"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>   
+
+<!-- ck editor -->
+    <script>
+
+      // Replace the <textarea id="editor"> with an CKEditor
+      // instance, using default configurations.
+      CKEDITOR.replace( 'editor1', {
+        uiColor: '#14B8C4',
+        toolbar: [
+          [ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
+          [ 'FontSize', 'TextColor', 'BGColor' ]
+        ]
+      });
+
+      CKEDITOR.on( 'instanceReady', function( evt ) {
+      var editor = evt.editor;
+      editor.setData( 'This editor has it\'s tabIndex set to <strong>' + editor.tabIndex + '</strong>' );
+
+      // Apply focus class name.
+      editor.on( 'focus', function() {
+        editor.container.addClass( 'cke_focused' );
+      });
+      editor.on( 'blur', function() {
+        editor.container.removeClass( 'cke_focused' );
+      });
+
+      // Put startup focus on the first editor in tab order.
+      if ( editor.tabIndex == 1 )
+        editor.focus();
+    });
+
+    </script>
+</body>
+
+</html>

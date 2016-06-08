@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<path d="M24,41.753c-9.789,0-17.753-7.964-17.753-17.753S14.211,6.247,24,6.247S41.753,14.211,41.753,24S33.789,41.753,24,41.753z
+		 M24,8.247C15.314,8.247,8.247,15.314,8.247,24c0,8.687,7.067,15.753,15.753,15.753c8.687,0,15.753-7.066,15.753-15.753
+		C39.753,15.314,32.687,8.247,24,8.247z"/>
+	<g>
+		<g>
+			<rect x="23" width="2" height="6.659"/>
+			<rect x="23" y="41.342" width="2" height="6.658"/>
+		</g>
+		<g>
+			<rect x="41.342" y="23" width="6.658" height="2"/>
+			<rect y="23" width="6.658" height="2"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="37.617" y="6.054" transform="matrix(0.7071 0.7071 -0.7071 0.7071 17.9457 -24.5582)" width="2" height="6.658"/>
+			<rect x="8.383" y="35.287" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.0541 4.6754)" width="2" height="6.658"/>
+		</g>
+		<g>
+			<rect x="35.288" y="37.616" transform="matrix(0.707 0.7073 -0.7073 0.707 38.6278 -15.996)" width="6.658" height="2"/>
+			<rect x="6.054" y="8.383" transform="matrix(0.707 0.7073 -0.7073 0.707 9.3861 -3.8867)" width="6.658" height="2"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="40.407" y="14.49" transform="matrix(0.3897 0.921 -0.921 0.3897 40.5913 -27.9812)" width="2" height="4.289"/>
+			<rect x="5.594" y="29.222" transform="matrix(0.3897 0.921 -0.921 0.3897 32.9113 13.0709)" width="2" height="4.288"/>
+		</g>
+		<g>
+			<rect x="29.221" y="40.406" transform="matrix(0.39 0.9208 -0.9208 0.39 57.2586 -3.6254)" width="4.289" height="2"/>
+			<rect x="14.369" y="5.777" transform="matrix(0.3898 0.9209 -0.9209 0.3898 16.4391 -11.2549)" width="4.685" height="2"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="39.032" y="30.033" transform="matrix(0.9269 0.3753 -0.3753 0.9269 14.6698 -13.2517)" width="4.642" height="2"/>
+			<rect x="4.34" y="15.9" transform="matrix(0.9269 0.3753 -0.3753 0.9269 6.8156 -1.1973)" width="4.285" height="2"/>
+		</g>
+		<g>
+			<rect x="15.9" y="39.374" transform="matrix(0.9266 0.3759 -0.3759 0.9266 16.8474 -3.3079)" width="2" height="4.286"/>
+			<rect x="30.008" y="4.321" transform="matrix(0.9268 0.3755 -0.3755 0.9268 4.7885 -11.1528)" width="2" height="4.775"/>
+		</g>
+	</g>
+</g>
+</svg>

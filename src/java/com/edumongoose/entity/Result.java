@@ -14,6 +14,24 @@ public class Result {
     String compilerError;
     String runtimeError;
     String output;
+    boolean compiled;
+    boolean executed;
+
+    public boolean isCompiled() {
+        return compiled;
+    }
+
+    public void setCompiled(boolean compiled) {
+        this.compiled = compiled;
+    }
+
+    public boolean isExecuted() {
+        return executed;
+    }
+
+    public void setExecuted(boolean executed) {
+        this.executed = executed;
+    }
 
     public String getCompilerError() {
         return compilerError;

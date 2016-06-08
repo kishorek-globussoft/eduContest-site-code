@@ -8,18 +8,17 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/edumongoose" /> 
+        <property name="url" value="jdbc:mysql://localhost:3306/educontest" /> 
         <property name="username" value="root" />
         <property name="password" value=""/> 
         <property name="connection.characterEncoding" value = "utf-8"/>
     </bean>
-  
-     initializing the sessionfactory , declaring the session properties, declaring the annotated classes 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-                <property name="packagesToScan" value="com.mediarecycler.utility"/>
+        <property name="packagesToScan" value="com.edumongoose.entity"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="c3p0.minPoolSize">15</prop>
@@ -32,12 +31,5 @@
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
-        <property name="annotatedClasses">
-            <list>
-                <value></value>
-            </list>
-        </property>
-    </bean>-->
-    <bean id = "program" class="com.edumongoose.entity.Program" ></bean>
-    <bean id="person" class="com.edumongoose.entity.Person"></bean> 
+    </bean>
 </beans>

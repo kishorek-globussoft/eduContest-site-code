@@ -7,6 +7,7 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -16,13 +17,19 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
+    
     <session-config>
         <session-timeout>
-            30
+            15
         </session-timeout>
     </session-config>
+
+    <error-page>
+        <location>/WEB-INF/jsp/pagenotfound.jsp</location>
+    </error-page>
+  
     <welcome-file-list>
-        <!--<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>-->
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>
+    
 </web-app>

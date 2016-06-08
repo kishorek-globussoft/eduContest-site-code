@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Nova+Mono);
+.brand-logo{
+	padding-top: 15px !important;
+}
+.avatar_name{
+	margin: 0;
+	font-size: x-large;
+	color: gray;
+	font-weight: 600;
+}
+.points{
+	margin: 0;
+}
+.points img{
+	vertical-align: text-bottom;
+}
+.points_text{
+	text-shadow: #7B5A00 2px 3px 4px;
+    color: #FFC227;
+    font-weight: 900;
+    font-size: xx-large;
+}
+.comp_name{
+	margin: 0;
+	font-weight: 600;
+}
+
+ul{
+	list-style: none outside none;
+    padding-left: 0;
+    margin: 0;
+}
+.demo .item{
+    margin-bottom: 60px;
+}
+.content-slider li{
+    background-color: #ed3020;
+    text-align: center;
+    color: #FFF;
+}
+.content-slider h3 {
+    margin: 0;
+    padding: 70px 0;
+}
+.demo{
+	width: 800px;
+}
+.error_bg{
+	background: url(../../images/coding-imac.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.error_404_text{
+	font-family: 'Nova Mono', Arial, serif;
+	color: #f1f1f1;
+	font-size: xx-large;
+}
+.margin_top_20{
+	margin-top: 20%;
+}
