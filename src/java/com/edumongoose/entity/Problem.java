@@ -13,8 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -54,9 +52,10 @@ public class Problem implements Serializable {
     private int difficulty;
     @Column(name = "author")
     private String author;
-    @Basic(optional = false)
+    @Column(name = "point")
+    private Integer point;
     @Column(name = "submission")
-    private int submission;
+    private Integer submission;
     @Basic(optional = false)
     @Column(name = "date")
     @Temporal(TemporalType.DATE)
@@ -74,7 +73,7 @@ public class Problem implements Serializable {
         this.id = id;
     }
 
-    public Problem(Integer id, String title, String code, String question, String input, String output, int difficulty, int submission, Date date) {
+    public Problem(Integer id, String title, String code, String question, String input, String output, int difficulty, Date date) {
         this.id = id;
         this.title = title;
         this.code = code;
@@ -82,7 +81,6 @@ public class Problem implements Serializable {
         this.input = input;
         this.output = output;
         this.difficulty = difficulty;
-        this.submission = submission;
         this.date = date;
     }
 
@@ -158,11 +156,19 @@ public class Problem implements Serializable {
         this.author = author;
     }
 
-    public int getSubmission() {
+    public Integer getPoint() {
+        return point;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
+    public Integer getSubmission() {
         return submission;
     }
 
-    public void setSubmission(int submission) {
+    public void setSubmission(Integer submission) {
         this.submission = submission;
     }
 

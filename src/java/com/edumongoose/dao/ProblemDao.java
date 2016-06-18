@@ -29,5 +29,8 @@ public interface ProblemDao {
     @Transactional(propagation = Propagation.REQUIRED)
     public Problem getProblem(int problemId);
     
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Problem getProblem(String code);
+    
     
 }

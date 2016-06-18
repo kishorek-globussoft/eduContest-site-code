@@ -7,6 +7,7 @@ package com.edumongoose.controllers;
 
 import com.edumongoose.entity.Program;
 import com.edumongoose.compilers.Compiler;
+import com.edumongoose.compilers.CompilerClass;
 import com.edumongoose.entity.Result;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Controller to handle all mappings related to compiler pages. 
  */
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/compiler")
 public class CompilerController {
 
     //Change this code to store values in a object and pass the object from method
@@ -36,8 +37,8 @@ public class CompilerController {
      * @return
      */
     
-    @RequestMapping(value = "/compile", method = RequestMethod.POST)
-    public String javaCompiler(Program program, BindingResult result, Model model, HttpServletRequest request) {
+    @RequestMapping(value = "compile", method = RequestMethod.POST)
+    public String compiler(Program program, BindingResult result, Model model, HttpServletRequest request) {
         Compiler compiler = new Compiler();
         Result programResult;
 //        model.addAttribute("output", programResult);
@@ -46,26 +47,11 @@ public class CompilerController {
 //        return gson.toJson(programResult);
         return "";
     }
-
-    @RequestMapping(value = "/index")
-    public String index() {
-        return "dashboard";
-    }
-
-    @RequestMapping(value = "/ide")
-    public String ide() {
-        return "ide";
-    }
-
-    @RequestMapping(value = "/listing")
-    public String listing() {
-        return "listing";
-    }
     
-    @RequestMapping(value = "/pagenotfound.")
-    public String pageNotFound() {
-        return "pagenotfound";
+    @RequestMapping(value = "execute", method = RequestMethod.GET)
+    public String execute(Program program,HttpServletRequest request) {
+        CompilerClass compiler = new CompilerClass();
+        Result result = compiler.compiler(program);
+        return "solveproblem";
     }
-    
-    
 }

@@ -11,7 +11,8 @@ package com.edumongoose.entity;
  */
 public class Program {
 
-    private String code;
+    private String problemCode;
+    private String program;
     private String input;
     private String output;
     private String language;
@@ -24,12 +25,20 @@ public class Program {
         this.language = language;
     }
     
-    public String getCode() {
-        return code;
+     public String getProblemCode() {
+        return problemCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setProblemCode(String problemCode) {
+        this.problemCode = problemCode;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
     }
 
     public String getInput() {

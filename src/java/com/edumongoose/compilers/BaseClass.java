@@ -21,10 +21,14 @@ public class BaseClass {
 
     public static void main(String[] args) {
         
-        String language = "c";
+//        String language = "java";
+////        String language = "c";
+        String language = "cpp";
         boolean success = compile(language);
         if (success) {
-            execute(language, "D://programs//c//in.txt");
+//            execute(language, "d://programs//java//in.txt");
+//            execute(language, "d://programs//c//in.txt");
+            execute(language, "d://programs//cpp//in.txt");
         }
     }
 
@@ -72,6 +76,7 @@ public class BaseClass {
             }
 
         } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
             System.out.println("in compile() " + e);
         }
         return false;
@@ -112,6 +117,7 @@ public class BaseClass {
                 return false;
             }
         } catch (IOException ioe) {
+            ioe.printStackTrace();
             System.err.println("in execute() " + ioe);
         } catch (InterruptedException ex) {
             Logger.getLogger(BaseClass.class.getName()).log(Level.SEVERE, null, ex);

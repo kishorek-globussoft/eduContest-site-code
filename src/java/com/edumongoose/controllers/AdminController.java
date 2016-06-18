@@ -48,7 +48,6 @@ public class AdminController {
         System.out.println(problem.getQuestion());
         problem.setAuthor("Edumongoose");
         problem.setDate(new Date());
-        problem.setDifficulty(1);
         problem.setInput("adf");
         problem.setOutput("adgd");
         problemDao.saveProblem(problem);

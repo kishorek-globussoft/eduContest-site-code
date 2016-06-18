@@ -23,41 +23,21 @@ import java.util.logging.Logger;
 public class CompilerClass {
 
     final static String SEPERATOR = File.separator;
-//    final static String JAVAPATH = System.getProperty("user.home") + SEPERATOR + "java" + SEPERATOR;
-    final static String JAVAPATH = "d://programs//java";
-//    final static String CPATH = System.getProperty("user.home") + SEPERATOR + "c" + SEPERATOR;
-    final static String CPATH = "d://programs//c";
-    final static String CPLUSPATH = "d://programs//cpp";
-//    final static String CPLUSPATH = System.getProperty("user.home") + SEPERATOR + "cpp" + SEPERATOR;
+    final static String JAVAPATH = System.getProperty("user.home") + SEPERATOR + "java" + SEPERATOR;
+//    final static String JAVAPATH = "d://programs//java";
+    final static String CPATH = System.getProperty("user.home") + SEPERATOR + "c" + SEPERATOR;
+//    final static String CPATH = "d://programs//c";
+//    final static String CPLUSPATH = "d://programs//cpp";
+    final static String CPLUSPATH = System.getProperty("user.home") + SEPERATOR + "cpp" + SEPERATOR;
 
-    public static void main(String[] args) {
-        Program program = new Program();
-        String code = "#include <iostream>\r\n"
-                + "using std::cout;\r\n"
-                + "\r\n"
-                + "int main()\r\n"
-                + "{\r\n"
-                + "	cout << \"Hello World!\\nWas't that easy?\\n\";\r\n"
-                + "	return 0;\r\n"
-                + "}\r";
-        String language = "2";
-        String input = "10 20";
-//        String code = "class Main{\r\n"
-//                + "public static void main(String args[]){\r\n"
-//                + "System.out.println(\"Hello World TEsting\");\r\n"
-//                + "}\r\n"
-//                + "}";
-        program.setCode(code);
-        program.setInput(input);
-        program.setLanguage(language);
-        new CompilerClass().compiler(program);
-
-    }
-
+//    public static void main(String[] args) {
+//        Program program = new Program();
+//        new CompilerClass().compiler(program);
+//    }
     public Result compiler(Program program) {
 
-        int language = Integer.parseInt(program.getLanguage());
-        String code = program.getCode().trim();
+        String language = program.getLanguage();
+        String code = program.getProgram().trim();
         String input = program.getInput().trim();
         ProcessBuilder processBuilder;
         Result result = new Result();
@@ -84,31 +64,26 @@ public class CompilerClass {
         FileWriter writer;
 
         switch (language) {
-            case 1:
+            case "c": {
                 cProgramFileName = "Main.c";
                 cInputFileName = "input.txt";
                 cOutputFileName = "output.txt";
 
                 programFile = writeToFile(CPATH, cProgramFileName, code);
                 inputFile = writeToFile(CPATH, cInputFileName, input);
-
-                commands = new ArrayList<>();
-                commands.add("gcc");
-                commands.add("-std=c++0x");
-                commands.add("-w");
-                commands.add("-o");
-                commands.add("Main");
-                commands.add(cProgramFileName);
-                processBuilder = preCompile(commands, CPATH);
-                System.out.println("Command " +processBuilder.command());
+                String compileCommand = "gcc -std=c++0x -w -o Main " + cProgramFileName;
+                processBuilder = preCompile(compileCommand, CPATH);
+                System.out.println("Command " + processBuilder.command());
                 compiled = compile(processBuilder, cOutputFileName);
 
                 if (compiled) {
+                    String executeCommand = "./Main";
                     commands = new ArrayList<>();
                     commands.add("./Main");
-                    processBuilder = preExecute(commands, CPATH, inputFile, cOutputFileName);
+                    processBuilder = preExecute(executeCommand, CPATH, inputFile, cOutputFileName);
                     executed = execute(processBuilder);
                     if (executed) {
+                        
                         result.setExecuted(true);
                         result.setOutput(readFromFile(CPATH, cOutputFileName));
                     }
@@ -118,32 +93,27 @@ public class CompilerClass {
                 }
 //                System.out.println("Compiler Error : " + result.getCompilerError());
                 System.out.println("Ouput : " + result.getOutput());
-                break;
+            }
+            break;
 
-            case 2:
+            case "c++": {
                 cPlusProgramFileName = "Main.cpp";
                 cPlusInputFileName = "input.txt";
                 cPlusOutputFileName = "output.txt";
 
                 programFile = writeToFile(CPLUSPATH, cPlusProgramFileName, code);
                 inputFile = writeToFile(CPLUSPATH, cPlusInputFileName, input);
-
-                commands = new ArrayList<>();
-                commands.add("g++");
-                commands.add("-std=c++0x");
-                commands.add("-w");
-                commands.add("-o");
-                commands.add("Main");
-                commands.add(cPlusProgramFileName);
-                processBuilder = preCompile(commands, CPLUSPATH);
-                System.out.println("Command " +processBuilder.command());
-                System.out.println("Directory " +processBuilder.directory());
+                String command = "g++ -std=c++0x -w -o Main " + cPlusProgramFileName;
+                processBuilder = preCompile(command, CPLUSPATH);
+                System.out.println("Command " + processBuilder.command());
+                System.out.println("Directory " + processBuilder.directory());
                 compiled = compile(processBuilder, cPlusOutputFileName);
 
                 if (compiled) {
+                    String executeCommand = "./Main";
                     commands = new ArrayList<>();
                     commands.add("./Main");
-                    processBuilder = preExecute(commands, CPLUSPATH, inputFile, cPlusOutputFileName);
+                    processBuilder = preExecute(executeCommand, CPLUSPATH, inputFile, cPlusOutputFileName);
                     executed = execute(processBuilder);
                     if (executed) {
                         result.setExecuted(true);
@@ -155,30 +125,35 @@ public class CompilerClass {
                 }
 //                System.out.println("Compiler Error : " + result.getCompilerError());
                 System.out.println("Ouput : " + result.getOutput());
-                break;
+            }
+            break;
 
-            case 3:
+            case "java":
                 javaProgramFileName = "Main.java";
                 javaInputFileName = "input.txt";
                 javaOutputFileName = "output.txt";
 
                 programFile = writeToFile(JAVAPATH, javaProgramFileName, code);
                 inputFile = writeToFile(JAVAPATH, javaInputFileName, input);
-
+                String command = "javac " + javaProgramFileName;
                 commands = new ArrayList<>();
                 commands.add("javac");
                 commands.add(javaProgramFileName);
-                processBuilder = preCompile(commands, JAVAPATH);
+                processBuilder = preCompile(command, JAVAPATH);
                 compiled = compile(processBuilder, javaOutputFileName);
 
                 if (compiled) {
+                    String executeCommand = "java Main";
                     commands = new ArrayList<>();
                     commands.add("java");
                     commands.add("Main");
-                    processBuilder = preExecute(commands, JAVAPATH, inputFile, javaOutputFileName);
+                    processBuilder = preExecute(executeCommand, JAVAPATH, inputFile, javaOutputFileName);
                     executed = execute(processBuilder);
                     if (executed) {
                         result.setExecuted(true);
+                        result.setOutput(readFromFile(JAVAPATH, javaOutputFileName));
+                    } else {
+                        result.setExecuted(false);
                         result.setOutput(readFromFile(JAVAPATH, javaOutputFileName));
                     }
                 } else {
@@ -212,7 +187,7 @@ public class CompilerClass {
         BufferedReader reader;
         String content = null;
         try {
-            reader = new BufferedReader(new FileReader(path +"//"+ fileName));
+            reader = new BufferedReader(new FileReader(path + "//" + fileName));
             StringBuilder sb = new StringBuilder();
             content = reader.readLine();
 
@@ -231,9 +206,9 @@ public class CompilerClass {
         return content;
     }
 
-    private ProcessBuilder preCompile(List<String> commands, String directory) {
+    private ProcessBuilder preCompile(String command, String directory) {
         ProcessBuilder processBuilder;
-        processBuilder = new ProcessBuilder(commands);
+        processBuilder = new ProcessBuilder(command);
         processBuilder.directory(new File(directory));
         processBuilder.redirectErrorStream(true);
         return processBuilder;
@@ -273,11 +248,11 @@ public class CompilerClass {
         return false;
     }
 
-    private ProcessBuilder preExecute(List<String> commands, String directory, File inputFile, String outputFilename) {
+    private ProcessBuilder preExecute(String command, String directory, File inputFile, String outputFilename) {
         File outputFile;
 
         ProcessBuilder processBuilder;
-        processBuilder = new ProcessBuilder(commands);
+        processBuilder = new ProcessBuilder(command);
         processBuilder.directory(new File(directory));
         processBuilder.redirectInput(inputFile);
         outputFile = new File(processBuilder.directory() + "//" + outputFilename);

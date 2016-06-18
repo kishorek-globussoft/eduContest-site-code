@@ -13,14 +13,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -28,7 +25,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "solution")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Solution.findAll", query = "SELECT s FROM Solution s")})
 public class Solution implements Serializable {
@@ -38,6 +34,9 @@ public class Solution implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @Basic(optional = false)
+    @Column(name = "problemId")
+    private int problemId;
     @Basic(optional = false)
     @Column(name = "userId")
     private int userId;
@@ -58,9 +57,6 @@ public class Solution implements Serializable {
     @Column(name = "date")
     @Temporal(TemporalType.DATE)
     private Date date;
-    @JoinColumn(name = "problemId", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Problem problem;
 
     public Solution() {
     }
@@ -69,8 +65,9 @@ public class Solution implements Serializable {
         this.id = id;
     }
 
-    public Solution(Integer id, int userId, int language, boolean solutionStatus, Date date) {
+    public Solution(Integer id, int problemId, int userId, int language, boolean solutionStatus, Date date) {
         this.id = id;
+        this.problemId = problemId;
         this.userId = userId;
         this.language = language;
         this.solutionStatus = solutionStatus;
@@ -83,6 +80,14 @@ public class Solution implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getProblemId() {
+        return problemId;
+    }
+
+    public void setProblemId(int problemId) {
+        this.problemId = problemId;
     }
 
     public int getUserId() {
@@ -139,14 +144,6 @@ public class Solution implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Problem getProblem() {
-        return problem;
-    }
-
-    public void setProblem(Problem problem) {
-        this.problem = problem;
     }
 
     @Override

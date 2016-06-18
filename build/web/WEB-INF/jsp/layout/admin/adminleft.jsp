@@ -10,8 +10,8 @@
             <img src="../view/assets/images/logo.png">
         </a>
     </li>
-    <li class="active bold"><a href="dashboard.htm">Dashboard</a></li>
-    <li class="bold"><a href="problemlisting.htm">Problems</a></li>
-    <li class="bold"><a href="judges.html">Judges</a></li>
+    <li class="active bold"><a href="/admin/dashboard.htm">Dashboard</a></li>
+    <li class="bold"><a href="/admin/problemlisting.htm">Problems</a></li>
+    <li class="bold"><a href="#">Judges</a></li>
 </ul>
 

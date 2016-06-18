@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author Admin
  */
 @Repository
-public class ProblemDaoImpl implements ProblemDao{
+public class ProblemDaoImpl implements ProblemDao {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -27,8 +27,7 @@ public class ProblemDaoImpl implements ProblemDao{
     public void setSessionFactory(SessionFactory SessionFactory) {
         this.sessionFactory = SessionFactory;
     }
-    
-    
+
     @Override
     public int saveProblem(Problem problem) {
         this.sessionFactory.openSession().save(problem);
@@ -51,6 +50,18 @@ public class ProblemDaoImpl implements ProblemDao{
     public Problem getProblem(int problemId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
+    @Override
+    public Problem getProblem(String code) {
+        Session session = this.sessionFactory.openSession();
+        Query query = session.createQuery("from Problem where code = :code");
+        query.setString("code", code);
+        List<Problem> problems = query.list();
+        Problem problem = new Problem();
+        if (problems != null || problems.size() > 0) {
+            problem = problems.get(0);
+        }
+        return problem;
+    }
+
 }

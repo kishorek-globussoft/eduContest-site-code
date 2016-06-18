@@ -6,50 +6,67 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <tiles-definitions>
-    <definition name="userlayout" template="/WEB-INF/jsp/layout/user/userlayout.jsp">
+    <definition name="usertemplate" template="/WEB-INF/jsp/layout/user/usertemplate.jsp">
         <put-attribute name="top" value="/WEB-INF/jsp/layout/user/top.jsp" />  
         <put-attribute name="left" value="/WEB-INF/jsp/layout/user/left.jsp" />       
         <put-attribute name="body" value="" />
         <put-attribute name="bottom" value="/WEB-INF/jsp/layout/user/bottom.jsp" />
     </definition>
     
-    <definition name="adminlayout" template="/WEB-INF/jsp/layout/admin/adminlayout.jsp">
+    <definition name="admintemplate" template="/WEB-INF/jsp/layout/admin/admintemplate.jsp">
         <put-attribute name="admintop" value="/WEB-INF/jsp/layout/admin/admintop.jsp" />  
         <put-attribute name="adminleft" value="/WEB-INF/jsp/layout/admin/adminleft.jsp" />       
         <put-attribute name="adminbody" value="" />
         <put-attribute name="adminbottom" value="/WEB-INF/jsp/layout/admin/adminbottom.jsp" />
     </definition>
+
+    <definition name="landingtemplate" template="/WEB-INF/jsp/layout/landing/landingtemplate.jsp">
+        <put-attribute name="title" value="Contest | Home"/>
+        <put-attribute name="landingtop" value="/WEB-INF/jsp/layout/landing/landingtop.jsp" />  
+        <put-attribute name="landingbody" value="" />
+        <put-attribute name="landingbottom" value="/WEB-INF/jsp/layout/landing/landingbottom.jsp" />
+    </definition>
     
     <definition name="errorlayout" template="/WEB-INF/jsp/layout/errorlayout.jsp">
+        <put-attribute name="title" value="Page Not Found" type="string" />
         <put-attribute name="errorbody" value="" />
     </definition>
     
-    <definition name="pagenotfound" extends="errorlayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/pagenotfound.jsp" />
+    <definition name="home" extends="landingtemplate">
+        
+        <put-attribute name="landingbody" value="/WEB-INF/jsp/homepage.jsp" />
     </definition>  
     
-    <definition name="dashboard" extends="userlayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+    <definition name="signin" extends="landingtemplate">
+        <put-attribute name="landingbody" value="/WEB-INF/jsp/signin.jsp" />
     </definition>  
     
-    <definition name="ide" extends="userlayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/ide.jsp" />
+    <definition name="signup" extends="landingtemplate">
+        <put-attribute name="landingbody" value="/WEB-INF/jsp/signup.jsp" />
     </definition>  
     
-    <definition name="listing" extends="userlayout">
+    <definition name="dashboard" extends="usertemplate">
+        <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />
+    </definition>  
+    
+    <definition name="solveproblem" extends="usertemplate">
+        <put-attribute name="body" value="/WEB-INF/jsp/solveproblem.jsp" />
+    </definition>  
+    
+    <definition name="listing" extends="usertemplate">
         <put-attribute name="body" value="/WEB-INF/jsp/listing.jsp" />
     </definition>  
     
-    <definition name="admindashboard" extends="adminlayout">
+    <definition name="admindashboard" extends="admintemplate">
         <put-attribute name="adminbody" value="/WEB-INF/jsp/admindashboard.jsp" />
     </definition>  
     
-    <definition name="uploadproblem" extends="adminlayout">
+    <definition name="uploadproblem" extends="admintemplate">
         <put-attribute name="adminbody" value="/WEB-INF/jsp/uploadproblem.jsp" />
     </definition>  
     
-    <definition name="problemlisting" extends="adminlayout">
-        <put-attribute name="adminbody" value="/WEB-INF/jsp/problemlisting.jsp" />
+    <definition name="problemlisting" extends="admintemplate">
+        <put-attribute name="adminbody" value="/WEB-INF/jsp/adminproblemlisting.jsp" />
     </definition>  
     
 </tiles-definitions>

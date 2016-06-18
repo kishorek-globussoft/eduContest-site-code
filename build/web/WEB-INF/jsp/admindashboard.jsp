@@ -63,7 +63,7 @@
                             <div class="card center">
                                 <div class="card-content">
                                     <p>No reports found.</p>
-                                    <a href="uploadproblem.htm" class="btn">Create a problem</a>
+                                    <a href="/admin/uploadproblem.htm" class="btn">Create a problem</a>
                                     <a href="#" class="btn">Read documentation</a>
                                 </div>
                             </div>

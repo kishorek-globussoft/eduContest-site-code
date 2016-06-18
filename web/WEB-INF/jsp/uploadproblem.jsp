@@ -27,46 +27,45 @@
         <div class="container">
 
             <div class="row">
-                <div class="col offset-m1 m10">
+                <div class="col m12">
                     <div class="card">
                         <div class="card-content">
                             <span class="card-title">Create problem</span>
-                            <form method="post" action="submitproblem.htm">
+                            <form method="post" action="/admin/submitproblem.htm">
                                 <div class="row">
-                                    <div class="input-field col s12">
+                                     <div class="input-field col s6">
+                                         <input id="title" type="text"  name="title" class="validate" placeholder="Title of the Problem" required="true">
+                                        <label for="title">Title</label>
+                                    </div>
+                                    <div class="input-field col s6">
                                         <input id="code" type="text" name="code" class="validate" placeholder="Code">
                                         <label for="Code">Code</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="title" type="text"  name="title" class="validate" placeholder="Title of the Problem">
-                                        <label for="title">Title</label>
+                                    <div class="input-field col s6">
+                                        <select name="difficulty" id="difficulty">
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value=1>Easy</option>
+                                            <option value=2>Medium</option>
+                                            <option value=3>Hard</option>
+                                        </select>
+                                        <label>Difficulty Level</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <textarea class="ckeditor" cols="80" id="question" name="question" rows="10" tabindex="3">
 <p>Problem Description...</p>
-
 <h3><strong>Input</strong></h3>
-
 <p>Input description...</p>
-
 <h3><strong>Output</strong></h3>
-
 <p>Output description...</p>
-
 <h3><strong>Example</strong></h3>
-
 <p><strong>Input:</strong><br />
 etc.<br />
 <strong>Output:</strong><br />
 etc.</p> </textarea>
                                     </div>
                                 </div>
-
-                                <input type="submit" class="btn" value="Submit"/>
-
-                                <!--                                <div class="card-action ">
-                                                                    <a href="uploadproblem.htm" class="btn">Submit</a>
-                                                                </div>-->
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                </button>
                             </form>
                         </div>
                     </div>

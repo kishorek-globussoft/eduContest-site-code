@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="active bold">
-            <a href="index.htm">Dashboard</a>
+            <a href="/user/dashboard.htm">Dashboard</a>
         </li>
         <li class="bold">
             <a href="#">Bots</a>

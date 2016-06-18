@@ -30,7 +30,7 @@ public class Compiler {
     final String SEPERATOR = File.separator;
 
     public Result compile(Program program) throws IOException {
-        String code = program.getCode();
+        String code = program.getProgram();
         int language = Integer.parseInt(program.getLanguage());
         String input = program.getInput();
         
